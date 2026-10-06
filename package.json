@@ -1,0 +1,67 @@
+{
+  "name": "crossfoot",
+  "version": "0.1.0",
+  "description": "Read invoices from PDF with an LLM that never writes a value: the model points at printed text, code reads it, and the document's own totals prove the read.",
+  "keywords": [
+    "pdf",
+    "invoice",
+    "extraction",
+    "llm",
+    "document-ai",
+    "parsing",
+    "accounts-payable",
+    "anthropic",
+    "claude"
+  ],
+  "license": "MIT",
+  "author": "Vijay Tambe",
+  "homepage": "https://github.com/vijaytambe12/crossfoot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaytambe12/crossfoot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vijaytambe12/crossfoot/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./anthropic": {
+      "types": "./dist/anthropic.d.ts",
+      "default": "./dist/anthropic.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "crossfoot": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && cp src/prompt.md dist/prompt.md",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "test": "vitest run",
+    "examples": "npm run build && node examples/make-examples.mjs",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "pdfjs-dist": "^4.10.38"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.2.0"
+  }
+}

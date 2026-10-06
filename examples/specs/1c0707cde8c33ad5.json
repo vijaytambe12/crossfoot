@@ -1,0 +1,138 @@
+{
+  "version": 4,
+  "pageWidth": 595,
+  "heading": [
+    "date con note receiver service kg freight fuel levy total"
+  ],
+  "identity": [
+    "date con note receiver service kg freight fuel levy total"
+  ],
+  "records": [
+    {
+      "x": 40,
+      "words": 0,
+      "shape": "d/d/d"
+    }
+  ],
+  "groups": [],
+  "columns": [
+    {
+      "name": "Date",
+      "left": 35,
+      "right": 100,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "date"
+    },
+    {
+      "name": "Con Note",
+      "left": 100,
+      "right": 170,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "text"
+    },
+    {
+      "name": "Receiver",
+      "left": 170,
+      "right": 295,
+      "fromLine": 1,
+      "toLine": null,
+      "type": "text"
+    },
+    {
+      "name": "Service",
+      "left": 295,
+      "right": 365,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "text"
+    },
+    {
+      "name": "Kg",
+      "left": 365,
+      "right": 405,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "number"
+    },
+    {
+      "name": "Freight",
+      "left": 405,
+      "right": 460,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "amount"
+    },
+    {
+      "name": "Fuel Levy",
+      "left": 460,
+      "right": 520,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "amount"
+    },
+    {
+      "name": "Total",
+      "left": 520,
+      "right": 570,
+      "fromLine": 1,
+      "toLine": 1,
+      "type": "amount"
+    }
+  ],
+  "labels": [],
+  "charges": null,
+  "otherAmounts": false,
+  "carryOver": false,
+  "lines": [
+    {
+      "label": "carried forward",
+      "x": 380,
+      "role": "end"
+    },
+    {
+      "label": "subtotal",
+      "x": 420,
+      "role": "end"
+    },
+    {
+      "label": "gst ##%",
+      "x": 420,
+      "role": "tax"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "record",
+      "total": "Total",
+      "parts": [
+        "Freight",
+        "Fuel Levy"
+      ]
+    },
+    {
+      "kind": "carry",
+      "cells": [
+        "Total"
+      ],
+      "carried": "carried forward",
+      "brought": "brought forward"
+    },
+    {
+      "kind": "sum",
+      "cells": [
+        "Total"
+      ],
+      "label": "subtotal"
+    },
+    {
+      "kind": "sum",
+      "cells": [
+        "Total",
+        "Invoice charge amount"
+      ],
+      "label": "total aud"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "version": 4,
+  "pageWidth": 595,
+  "heading": [],
+  "identity": [
+    "job no:"
+  ],
+  "records": [
+    {
+      "x": 40,
+      "words": 0,
+      "text": "job no:"
+    }
+  ],
+  "groups": [],
+  "columns": [],
+  "labels": [
+    {
+      "name": "Job No:",
+      "label": "job no:",
+      "where": "right",
+      "type": "text"
+    },
+    {
+      "name": "Date:",
+      "label": "date:",
+      "where": "right",
+      "type": "date"
+    },
+    {
+      "name": "Pickup:",
+      "label": "pickup:",
+      "where": "rightBlock",
+      "type": "text"
+    },
+    {
+      "name": "Delivery:",
+      "label": "delivery:",
+      "where": "rightBlock",
+      "type": "text"
+    },
+    {
+      "name": "Job total",
+      "label": "job total",
+      "where": "right",
+      "type": "amount"
+    }
+  ],
+  "charges": {
+    "nameLeft": 55,
+    "nameRight": 260,
+    "amountLeft": 260,
+    "amountRight": 305,
+    "fromLine": 1,
+    "toLine": null
+  },
+  "otherAmounts": false,
+  "carryOver": false,
+  "lines": [
+    {
+      "label": "total due",
+      "x": 60,
+      "role": "end"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "record",
+      "total": "Job total",
+      "parts": [
+        "Charges"
+      ]
+    },
+    {
+      "kind": "sum",
+      "cells": [
+        "Job total"
+      ],
+      "label": "total due"
+    }
+  ]
+}
