@@ -1,6 +1,5 @@
 # crossfoot
 
-[![CI](https://github.com/vijaytambe12/crossfoot/actions/workflows/ci.yml/badge.svg)](https://github.com/vijaytambe12/crossfoot/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Read invoice PDFs with an LLM that never writes a number.**
