@@ -1,5 +1,6 @@
 # crossfoot
 
+[![npm](https://img.shields.io/npm/v/crossfoot.svg)](https://www.npmjs.com/package/crossfoot)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Read invoice PDFs with an LLM that never writes a number.**
@@ -79,11 +80,10 @@ node dist/cli.js examples/courier-statement.pdf --question
 ## Install
 
 ```bash
-npm install github:vijaytambe12/crossfoot
+npm install crossfoot
 ```
 
-It is not on the npm registry yet, so install it from GitHub. Node 20 or later. The package is ES
-modules only.
+Node 20 or later. The package is ES modules only.
 
 ## Use it
 
@@ -266,6 +266,8 @@ statements, remittance advices, credit notes.
 miss.
 
 ## Command line
+
+Installed with the package, or run without installing as `npx crossfoot invoice.pdf`.
 
 ```
 crossfoot <file.pdf> [options]
